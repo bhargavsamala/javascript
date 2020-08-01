@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<meta charset='utf-8'>
+	<style>
+		#p1,#p2{
+			display:none;
+		}
+	</style>
+	<body>
+		<div>
+			<input id = '1nput1' type='text'><button id='b1' onclick = "func()">Add Info</button></input>
+			<ol id='u1'></ol>
+			
+		</div>
+		<script>
+			function func(){
+				var info = document.getElementById('1nput1').value;
+				
+				//creating li node
+				var infoSeq = document.createElement('li');
+				var infoSeqtext = document.createTextNode(info);
+				infoSeq.appendChild(infoSeqtext);
+				
+				//add buttons to that li node
+				var doneBtn = document.createElement('button');
+				var doneTxt = document.createTextNode('Done');
+				doneBtn.appendChild(doneTxt);
+				doneBtn.addEventListener('click', function(event){console.log(event.target.parentElement);event.target.parentElement.style.backgroundColor='green';});
+				infoSeq.appendChild(doneBtn);
+				
+				var deleteBtn = document.createElement('button');
+				var deleteTxt = document.createTextNode('Delete');
+				deleteBtn.appendChild(deleteTxt);
+				deleteBtn.addEventListener('click', function(event){var parent = event.target.parentElement; parent.remove()});
+				infoSeq.appendChild(deleteBtn);
+				
+				var ulInfo = document.getElementById('u1');
+				ulInfo.appendChild(infoSeq);
+			}
+		</script>
+	<body>
+</html>

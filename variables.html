@@ -1,0 +1,142 @@
+<html>
+	<label>Enter your Name:</label>
+	<input id='ip1' type = 'Number'></input>
+	<button onclick="f()">getData</button>
+	<p id='op2'></p>
+	<script>
+	
+	function f(){
+		var i = document.getElementById('ip1').value;
+		var y = i + '';
+		var strList = y.split('');
+		var l = [];
+		var newList = [];
+		function callFunc(item){
+			var exists = false;
+			var len = y.split(item).length-1;
+			for(var b = 0; b < l.length; b++){
+				if(l[b].name == item){
+					exists = true
+				}
+			}
+			if(!exists){
+				var obj = {'name' : item,
+					   'value' : len};
+				l.push(obj);
+			}
+		}
+		
+		for(var a = 0; a < strList.length-1; a++ ){
+			callFunc(strList[a]);
+		}
+		
+		
+		var output = '';
+		var bl = l.sort(function(a,b){return b.value-a.value;})
+		for(var b = 0; b < bl.length; b++){
+			for(var c = 0; c < bl[b].value; c++){
+				output = output + bl[b].name;
+			}
+		}
+		
+		/*var x='';
+		for(var idx = y.length-1; idx >= 0; idx--){
+			x = x+y[idx];
+		}*/
+		//var x = y.split().reverse().join();
+		document.getElementById('op2').innerHTML = output;
+	}
+	
+	
+
+
+	
+	/*
+		var x = 30;
+		let y = 10;
+		const z = 20;
+		//employee -- id, name, designation, education, age, bloodgroup
+		
+		var arr = [1,2,3,3,4,4,7,4];
+		function Arrfunc (array){
+			x = 0;
+			console.dir('array :: ', x);
+			var x;
+		}
+		Arrfunc(arr);
+		
+		
+		if(x>y){
+			console.log('first log :: ', x, y, z);
+			
+			var a = 100;
+			let b = 200;
+			const c = 300;
+			
+			a = 400;
+			
+			console.log('Inside log 1 :: ', a,b,c);
+		}
+		for(let i = 0; i < 10; i++){
+			console.log('incremented value ::' , i);
+		}
+		
+		var slist = ['a','b','c'];
+		var ilist = [1,2,3];
+		var empList = [];
+		
+		
+		var e1obj = {
+			'id':269,
+			'name':'Bhargav S',
+			'designation':'SOftware Developer',
+			'education': {
+					'graduation': 'B.Tech IIT',
+					'postgraduation' : 'None'
+				},
+			'age':28,
+			'bloodgroup':'B+ve',
+			'date':'13-11-2019'
+			
+		};
+		const e2obj = {
+			'id':270,
+			'name':'Papa Harika',
+			'designation':'Tester',
+			'education': {
+					'graduation': 'B.Tech',
+					'postgraduation' : 'MBA'
+				},
+			'age':24,
+			'bloodgroup':'AB+ve',
+			'date':'08-02-2016'
+			
+		}
+		e2obj.name=e1obj.name;	
+		empList.push(e1obj);
+		empList.push(e2obj);
+		
+		var n ='';
+		function name(name){
+			n = name;
+			console.log('function name :: ', n);
+		}
+		
+		function id(id){
+			var n = id;
+			console.log('function name :: ', n);
+		}
+		
+		
+		
+		name(e2obj.name);
+		id(e2obj.id); 
+		console.log('function var  :: ', n)
+		
+		console.log('out log 1 ::', x, y, z);
+		console.log('out log 2 :: ', a , e2obj);
+		console.log('Employee name :: ', e2obj.name);
+		
+		*/
+	</script>
+</html>

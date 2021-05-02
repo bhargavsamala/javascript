@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<meta charset='utf-8'>
+	<style>
+	</style>
+	<body>
+		<div>
+			<label>fromDate</label><input id = 'i1' type = 'text' placeholder='yyyy-MM-dd'></input>
+			<label>toDate</label><input id = 'i2' type = 'text' ></input>
+			<button id='b3' onclick="getDays()">Get Days</button>
+			</br>
+			</br>
+			<label>Date Diff in days</label><input id = 'i3' type = 'text'></input>
+			<label>Date Diff in days Excluding Weekends</label><input id = 'i4' type = 'text'></input>
+			
+		</div>
+		<script>
+			function getDays(){
+				var td = document.getElementById('i2').value;
+				var toDate = new Date(td);
+				
+				var fd = document.getElementById('i1').value;
+				var fromDate = new Date(fd);
+				
+				var dateDiff = Math.abs((toDate-fromDate)/(1000*60*60*24));
+				document.getElementById('i3').value = dateDiff;
+				
+				var toDay  = toDate.getDay();
+				var fromDay = fromDate.getDay();
+				
+				
+				var weeks = Math.floor(dateDiff/7);
+				dateDiff = dateDiff - (weeks*2);
+				
+				/*
+				if((fromDay - toDay) > 1){
+					dateDiff = dateDiff - 2;
+				}*/
+				
+				if(fromDay == 0 && toDay == 6){
+					dateDiff = dateDiff - 2;
+				}
+				
+				if(fromDay == 0 && toDay != 6){
+					dateDiff = dateDiff - 1;
+				}
+				if(toDay == 6 && fromDay != 0){
+					dateDiff = dateDiff - 1;
+				}
+				
+				document.getElementById('i4').value = dateDiff;
+				
+				
+				console.log("diff :: ",toDay, fromDay);
+				
+			
+			}
+			
+		</script>
+	<body>
+</html>

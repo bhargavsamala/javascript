@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="utf-8">
+	<script>
+		var x = 100;
+		var y = 200;
+		var z = x+y;
+		document.write(`The addition of ${x} and ${y} is ${z}`)
+		
+		// JSON loop
+		var countCap = [{'Country' : 'India','Capital':'New Delhi'},{'Country' : 'Pakistan','Capital':'Lahore'},{'Country' : 'China','Capital':'Beijing'},
+		{'Country' : 'Bangladesh','Capital':'Dhaka'},{'Country' : 'Sri Lanka','Capital':'Katthioru'},{'Country' : 'Nepal','Capital':'Khatmandu'}];
+		var c = {'Country' : 'Bangladesh','Capital':'Dhaka'}
+		console.log(c);
+		document.write(`<table border="2">
+							<tr>
+								<th>Country</th>
+								<th>Capital</th>
+							</tr>
+							<tr>`);
+		for(let i=0; i < countCap.length; i++){
+			for(k in countCap[i]){
+				document.write(`<td>${countCap[i][k]}</td>`);
+			}
+			document.write('</tr><tr>')
+		}
+		document.write(`</tr></table>`)
+	</script>
+</html>

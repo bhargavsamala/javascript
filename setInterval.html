@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<meta charset='utf-8'>
+	<style>
+	</style>
+	<body>
+		<div>
+			<h1 id ='counter'><span id='s1'></span>:<span id ='s2'></span></h1>
+			<button id='b1' onclick="startFunc()">Start</button>
+			<button id='b2' onclick="pauseFunc()">Pause</button>
+			<button id='b3' onclick="resetFunc()">Reset</button>
+		</div>
+		<script>
+			var sInt;
+			
+			function resetFunc(){
+				document.getElementById('s1').innerHTML = 30;
+				document.getElementById('s2').innerHTML = '00';
+				clearInterval(sInt);
+			}
+			resetFunc();
+			
+			
+			
+			function startFunc(){
+				
+				sInt = setInterval(function(){
+					var s = document.getElementById('s2').innerHTML;
+					var m = document.getElementById('s1').innerHTML;
+					if(s == '00' || s == 0){
+						document.getElementById('s2').innerHTML = 59;
+						m--;
+						document.getElementById('s1').innerHTML = m;
+					}else{
+						s--;
+						document.getElementById('s2').innerHTML = s;
+					}	
+				},1000);
+				
+			}
+			
+			function pauseFunc(){
+				clearInterval(sInt);
+			}
+		</script>
+	<body>
+</html>

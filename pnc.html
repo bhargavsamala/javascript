@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<meta charset='utf-8'>
+	<style>
+	</style>
+	<body>
+		<div>
+			<p id ="format"><b>nCr</b></p>
+			<span> Enter value for 'n':</span>
+			<input id ="idinp1" type="Number"></input></br>
+			<span> Enter value for 'r':</span>
+			<input id ="idinp2" type="Number"></input>
+			<br>&nbsp;</br>
+
+			<button id='b1' onclick="startFunc()">Submit</button>
+			<br>&nbsp;</br>
+			<span> Result :</span>
+			<p id ="answer1"></p>
+		</div>
+		<script>
+			var factorial = function(a){
+				var x = 1;
+				if(a == 0){
+					return 1;
+				}else{
+					for(let idx = 1; idx <= a; idx++){
+						x = x*idx;
+					}
+					return x;
+				}
+				
+			}
+			
+			function startFunc(){
+				var n = document.getElementById('idinp1').value;
+				var r = document.getElementById('idinp2').value;
+				var ans = '';
+				var isvalid = true;
+				if(n <= 0){
+					ans = 'the value for n is not a proper valid number';
+					isvalid = false;
+				}
+				if(r < 0){
+					ans = 'the value for r is not a proper valid number';
+					isvalid = false;
+				}
+				if((n-r) < 0){
+					ans = 'the value for n should be always greater or equal to n';
+					isvalid = false;
+				}
+				console.log('entered :: ', n, r)
+				if(isvalid){
+					var rFact = factorial(r);
+					var nFact = factorial(n);
+					var diFact = factorial(n-r);
+					
+					var value = nFact/(rFact*diFact);
+					ans = value.toString()	;
+					console.log('entered :: ',value, ans);
+				}
+				
+				
+				document.getElementById('answer1').innerHTML = ans;
+				document.getElementById('answer1').readOnly = true;
+			}
+		</script>
+	<body>
+</html>

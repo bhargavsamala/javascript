@@ -1,0 +1,56 @@
+
+
+
+ <html>
+<!--<style>
+body {
+  margin: 0;
+  background: #CCCCCC;
+}
+
+#page {
+  margin: 10px auto;
+  border: solid 1px black;
+  display: block;
+  page-break-after: always;
+  width: 296mm;
+  height: 209mm;
+  overflow: hidden;
+  background: white;
+}
+
+#landscape {
+  width: 296mm;
+  height: 209mm;
+  padding: 10mm;
+}
+
+
+
+
+@media print {
+  
+  
+  #landscape {
+    transform: rotate(270deg) translate(-296mm, 0);
+    transform-origin: 0 0;
+}
+</style>-->
+<style type="text/css" media="print">
+   @page Section1
+    {size:11 8.5in;
+    margin:.5in 13.6pt 0in 13.6pt;
+    mso-header-margin:.5in;
+    mso-footer-margin:.5in;
+    mso-paper-source:4;}
+div.Section1
+    {page:Section1;}
+</style>
+
+<div class="Section1">
+  <div id="landscape">
+      Second page in Landscape mode (correctly shows horizontally in browser and prints rotated in printer)
+  </div>
+</div>
+</body>
+</html>

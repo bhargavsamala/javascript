@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+</head>
+	<script>
+	function operatorionOfNumber(x, f){
+		var i = 1;
+		if(f == 'm'){
+			var list = [];
+			while(i<11){
+				list.push(i*x);
+				i++;
+			}
+			document.write("Multiples of "+x+" :: ", list+'\n </br>');
+		}else if(f == 'f'){
+			var list = [];
+			var count = 0;
+			while(i<=x){
+				if(x%i == 0){
+					count++;
+					list.push(i);
+				}
+				i++;
+			}
+			document.write("factors of "+x+" :: ",count+' - ', list+'\n </br>');
+		}
+		
+	}
+	operatorionOfNumber(12, 'm');
+	operatorionOfNumber(24,'f');
+	
+	
+	
+		/*
+		var x = 100;
+		var z = 100 *3;
+		console.log('z :: ', z)
+		
+		var a = 1;
+		a = x/24;
+		console.log('a :: ', a, Math.round(a))
+		
+		var b = x%21;
+		console.log('b :: ', b);
+		
+		var i = 10;	
+		var j = '10';
+		
+		if(i == j){
+			console.log('a is equals to b')
+		}else{
+			console.log('a, b are not equal because:: ', typeof (i), typeof (j))
+		} 
+		
+		var list = [90,76,108];
+		//console.log('first item :: ', list[0], list.length);
+		//console.log('2nd item :: ', list[1]);
+		//console.log('3rd item :: ', list[2]);
+		
+		for(let i=0; i < list.length; i++){
+			console.log(i,' item is  :: ', list[i]);
+			if(list[i] == 76){
+				console.log('76 item found yahoooo!!!');
+				break;
+			}
+		}
+		
+		var j = 0;
+		while (j < list.length){
+			console.log(j,' while item is  :: ', list[j]);
+			j++;
+		}
+		*/
+		
+		var numList = [11, 6, 9, 36, 24];
+		//ascending order function
+		function sortAsc(list){
+			document.write("sorted array :: ", list);
+			console.log("length :: ",list.sort(function(a,b){return b-a;}))
+			/*if(list && list.length > 0){
+				document.write("length :: ",list.length);
+				for(var i = 0; i < list.length; i++){
+					var a = list[i] ? list[i] : null;
+					var b = list[i+1] ? list[i+1] : null;
+					
+				}
+			}*/
+		}
+		sortAsc(numList);
+		//numList.sort();
+		
+		
+		var pnumber = 35567;
+		//find whether prime number or not
+		
+		  
+		function isPrimeOrNot(pn)
+		{
+			var count = 0;
+			for(let i=2; i<pn ;i++){
+				if(pn%i==0){
+					var doc = pn+' is not a prime number as it is divisible by '+ i +' by '+Math.floor(pn/i)+' times';
+					console.log(doc);
+					document.write("<p>"+doc+"</p>")
+					count++;
+					break;
+				}
+			}
+			if(count == 0){	
+				var d = pn+' is a prime number'
+				console.log(d)
+				document.write("<p>"+d+"</p>")				
+			}
+		}
+		
+		isPrimeOrNot(pnumber);
+		isPrimeOrNot(449);
+		isPrimeOrNot(567);
+		  
+		function addition(a,b){
+			var c = a+b;
+			console.log(c)
+			document.write("<p>Addition value is "+c+"</p>")
+		}
+		addition(34567865,987654);
+		function subtraction(a,b){
+			var c = a-b;
+			console.log(c)
+			document.write("<p>Subtration value is "+c+"</p>")
+		}
+		
+		subtraction(34567865,987654);
+		  //for(declaration){statements}
+		  //if(condition){statements}
+		/*
+		var a = 900;
+		var b = 7600;
+		var c = 1080;
+		
+		a<b<c
+		
+		if(a < b){
+			if(a < c){
+				console.log('smallest :: ',a);
+				if(b>c){
+					console.log('middle :: ', c);
+					console.log('largest :: ', b)
+				}else{
+					console.log('middle :: ', b);
+					console.log('largest :: ', c)
+				}
+			}
+		}
+		
+		if(b < c){
+			if(b < a){
+				console.log('smallest :: ',b);
+				if(c>a){
+					console.log('middle :: ', a);
+					console.log('largest :: ', c)
+				}else{
+					console.log('middle :: ', c);
+					console.log('largest :: ', a)
+				}
+			}
+		}
+		
+		if(c < a){
+			if(c < b){
+				console.log('smallest :: ',c);
+				if(a>b){
+					console.log('middle :: ', b);
+					console.log('largest :: ', a)
+				}else{
+					console.log('middle :: ', a);
+					console.log('largest :: ', b)
+				}
+			}
+		}
+		*/
+		
+		
+		
+	</script>
+</html>
